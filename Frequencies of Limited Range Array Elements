@@ -1,0 +1,9 @@
+def frequencyCount(self, arr, N, P):
+        # code here
+        arr2 =arr.copy()
+        for i in arr2:
+            if i<=N:
+                arr[i - 1] += 1
+        for i in range(N):
+            arr[i]=arr[i]-arr2[i]
+        return arr
