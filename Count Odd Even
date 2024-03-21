@@ -1,0 +1,12 @@
+#User function Template for python3
+
+class Solution:
+	def countOddEven(self, arr, n):
+		#Code here
+		a=b=0
+		for i in range (n):
+		    if arr[i]%2==0:
+		        a+=1
+		    else:
+		        b+=1
+		return b,a 
