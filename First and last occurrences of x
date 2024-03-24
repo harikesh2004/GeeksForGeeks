@@ -1,0 +1,15 @@
+#User function Template for python3
+
+
+class Solution:
+    def find(self, arr, n, x):
+        
+        # code here
+        if x not in arr:
+            return -1,-1
+        c=0
+        for i in range (n):
+            if arr[i] == x:
+                c+=1
+                a=i
+        return a-c+1,a
