@@ -1,0 +1,10 @@
+#User function Template for python3
+
+class Solution:
+    
+    #Function to find the smallest positive number missing from the array.
+    def missingNumber(self,arr,n):
+        arrSet= set(arr)
+        for i in range(1,n+2):
+            if i not in arrSet:
+                return i
