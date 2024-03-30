@@ -1,0 +1,16 @@
+
+class Solution:
+    def indexes(self, v, x):
+        ind=-1
+        if x in v:
+            ind = v.index(x)
+        if ind == -1:
+            return [-1,-1]
+        ct=0
+        for i in range(ind+1,len(v)):
+            if v[i]==x:
+                ct+=1
+            else:
+                break
+        lst=ct+ind
+        return [ind,lst]
