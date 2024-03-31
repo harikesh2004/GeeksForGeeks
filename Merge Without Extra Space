@@ -1,0 +1,13 @@
+#User function Template for python3
+
+class Solution:
+    
+    #Function to merge the arrays.
+    def merge(self,arr1,arr2,n,m):
+        #code here
+        arr=[]
+        arr[:]=arr1+arr2
+        arr.sort()
+        arr1[:]=arr[:n+1]
+        arr2[:]=arr[n+1:]
+    
