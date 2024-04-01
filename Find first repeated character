@@ -1,0 +1,13 @@
+#User function Template for python3
+
+class Solution:
+
+    def firstRepChar(self, s):
+        # code here
+        l = []
+        for i in s:
+            if i not in l:
+                l.append(i)
+            else:
+                return i
+        return -1
