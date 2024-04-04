@@ -1,0 +1,30 @@
+#User function Template for python3
+
+class Solution:
+    def productExceptSelf(self, nums, n):
+        #code here
+        temparr = []
+        zerocount = 0
+        mul = 1
+        for i in range (len(nums)):
+            if nums[i] == 0:
+                zerocount += 1
+        if zerocount == 1:
+            for i in nums:
+                if i!=0:
+                    mul = mul*i
+            for i in nums:
+                if i == 0:
+                    temparr.append(mul)
+                else:
+                    temparr.append(0)
+        elif zerocount>1:
+            for i in nums:
+                temparr.append(0)
+        else: 
+            mul1 = 1
+            for i in nums:
+                mul1 *= i
+            for i in nums:
+                temparr.append(int(mul1/i))
+        return temparr
