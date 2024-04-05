@@ -1,0 +1,9 @@
+class Solution:
+    def findExtra(self,a,b,n):
+        #add code here
+        b[:]=b[:]+[a]
+        for i in range (0,n):
+            if a[i]==b[i]:
+                continue
+            else:
+                return i
