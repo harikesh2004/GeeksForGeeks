@@ -1,0 +1,27 @@
+#User function Template for python3
+
+class Solution:
+    
+    #Complete this function
+    
+    #Function to return the name of candidate that received maximum votes.
+    def winner(self,arr,n):
+        # Your code here
+        # return the name of the winning candidate and the votes he recieved
+        votes = -1
+        d = {}
+        for x in arr:
+            if x in d:
+                d[x] += 1
+            else:
+                d[x] = 1
+        mx = -1
+        win = ''
+        for i,val in d.items():
+            if val > mx:
+                mx = val
+                win = i
+            elif (val == mx) and (i < win):
+                mx = val
+                win = i
+        return [win, mx]
