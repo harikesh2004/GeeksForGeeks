@@ -1,0 +1,13 @@
+#User function Template for python3
+
+class Solution:
+    def segregateElements(self, arr, n):
+        # Your code goes here
+        a=[]
+        b=[]
+        for i in (arr):
+            if i<0:
+                a.append(i)
+            else:
+                b.append(i)
+        arr[:]=b+a
