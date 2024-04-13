@@ -1,0 +1,10 @@
+#User function Template for python3
+
+class Solution:
+    def reversedBits(self, x):
+        # code here 
+        ans=0
+        ans = bin(x & 0xFFFFFFFF)[2:]
+        ans = '0' * (32 - len(ans)) + ans
+        ans=ans[::-1]
+        return int(ans,2)
