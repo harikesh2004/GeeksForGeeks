@@ -1,0 +1,15 @@
+#User function Template for python3
+
+class Solution:
+    
+    #Function to find the minimum indexed character.
+    def minIndexChar(self,Str, pat): 
+        #code here
+        s=[]
+        for i in pat:
+            if i in Str:
+                s.append(Str.index(i))
+        if len(s)==0:
+            return -1
+        else:
+            return min(s)
