@@ -1,0 +1,10 @@
+#User function Template for python3
+
+def minAnd2ndMin( a, n):
+    s=sorted(list(set(a)))
+    if len(s)>=2:
+        return [s[0],s[1]]
+    else:
+        return [-1,-1]
+    
+    
