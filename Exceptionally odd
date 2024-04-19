@@ -1,0 +1,10 @@
+#User function Template for python3
+
+class Solution:
+    def getOddOccurrence(self, arr, n):
+        # code here 
+        arr.sort()
+        ans=arr[0]
+        for i in range(1,len(arr)):
+            ans=ans^arr[i]
+        return ans
