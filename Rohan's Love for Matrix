@@ -1,0 +1,12 @@
+#User function Template for python3
+class Solution:
+    def firstElement (self, n):
+        # code here 
+        fib = [0,1]
+        if n==0:return 0
+        elif n==1:return 1
+        mod = 10**9+7
+        for i in range(0,n-1):
+            fib.append((fib[-1]+fib[-2])%mod)
+            
+        return fib[-1]
