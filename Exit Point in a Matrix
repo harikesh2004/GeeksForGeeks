@@ -1,0 +1,23 @@
+#User function Template for python3
+
+class Solution:
+	def FindExitPoint(self, n, m, matrix):
+		# Code here
+		i,j,d=0,0,0
+        while (0<=i<n and 0<=j<m):
+            if matrix[i][j]==1:
+                matrix[i][j]=0
+                d=(d+1)%4
+            if d==0: 
+                j+=1
+            elif d==1:
+                i+=1
+            elif d==2:
+                j-=1
+            else: 
+                i-=1
+        if d==0: return (i,j-1)
+        elif d==1: return (i-1,j)
+        elif d==2: return (i,j+1)
+        return (i+1,j)
+
