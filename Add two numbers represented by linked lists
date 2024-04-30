@@ -1,0 +1,30 @@
+#User function Template for python3
+
+''' Node for linked list:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+'''
+class Solution:
+    #Function to add two numbers represented by linked list.
+    def addTwoLists(self, num1, num2):
+        # code here
+        # return head of sum list
+        s1,s2=0,0
+        dummy=Node(0)
+        prev=dummy
+        while num1:
+            s1=s1*10+num1.data
+            num1=num1.next
+        while num2:
+            s2=s2*10+num2.data
+            num2=num2.next
+        tot_sum=str(s1+s2)
+        for i in tot_sum:
+            prev.next=Node(i)
+            prev=prev.next
+        return dummy.next
+
