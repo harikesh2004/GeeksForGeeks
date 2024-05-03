@@ -1,0 +1,14 @@
+#User function Template for python3
+
+
+
+'''
+class Node:
+    def _init_(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+class Solution:
+    def KDistance(self,root,k):
+        return list() if not root else ([root.data] if k==0 else self.KDistance(root.left,k-1)+self.KDistance(root.right,k-1))
