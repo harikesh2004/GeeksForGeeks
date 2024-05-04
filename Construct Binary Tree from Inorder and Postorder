@@ -1,0 +1,22 @@
+#User function Template for python3
+
+'''
+class Node:
+            def __init__(self, data):
+                self.data = data
+                self.left = self.right = None
+'''
+
+#Function to return a tree created from postorder and inoreder traversals.
+class Solution:
+    def buildTree(self, In, post, n):
+        if not In or not post:
+            return None
+        root_val = post.pop()
+        root = Node(root_val)
+        inorder_index = In.index(root_val)
+        root.right = self.buildTree(In[inorder_index + 1:], post, n)
+        root.left = self.buildTree(In[:inorder_index], post, n)
+        return root
+        
+
