@@ -1,0 +1,29 @@
+
+'''
+# Node Class:
+class Node:
+    def __init__(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+class Solution:
+    def verticalSum(self, root):
+        hmap = {}
+        def dfs(node, level):
+            if level in hmap :
+                hmap[level] += node.data
+            else:
+                hmap[level] = node.data
+            if node.left:
+                dfs(node.left, level-1)
+            if node.right:
+                dfs(node.right, level+1)
+        dfs(root, 0)
+        arr = []
+        for key, val in hmap.items():
+            arr.append([key, val])
+        arr.sort(key = lambda x: x[0])
+        for i,tup in enumerate(arr):
+            arr[i] = tup[1]
+        return arr
