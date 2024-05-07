@@ -1,0 +1,25 @@
+#User function Template for python3
+
+'''
+class Node:
+    def __init__(self,val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+def reverseLevelOrder(root):
+    # code here
+    l = []
+    temp = root
+    l.append(temp)
+    nums = []
+    while l:
+        temp = l.pop(0)
+        if temp.right:
+            l.append(temp.right)
+        if temp.left:
+            l.append(temp.left)
+        nums.append(temp.data)
+    
+    return nums[::-1]
+
