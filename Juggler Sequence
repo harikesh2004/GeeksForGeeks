@@ -1,0 +1,10 @@
+#User function Template for python3
+
+class Solution:
+    def jugglerSequence(self, n):
+        # code here
+        sequence = [n]
+        while n != 1:
+            n = int(n ** 0.5) if n % 2 == 0 else int((n ** 3) ** 0.5)
+            sequence.append(n)
+        return sequence
