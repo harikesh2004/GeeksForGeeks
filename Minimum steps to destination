@@ -1,0 +1,10 @@
+#User function Template for python3
+
+class Solution:
+    def minSteps(self, d):
+        # code here
+        a,b=0,0
+        while b<d or (b-d)%2!=0:
+            a+=1
+            b+=a
+        return a
