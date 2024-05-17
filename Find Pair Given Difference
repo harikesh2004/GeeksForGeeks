@@ -1,0 +1,14 @@
+
+from typing import List
+
+
+class Solution:
+    def findPair(self, n : int, x : int, arr : List[int]) -> int:
+        # code here
+        num_set = set(arr)
+        for num in arr:
+            if x != 0 and (x + num) in num_set:
+                return 1
+            elif x == 0 and arr.count(num) > 1:
+                return 1
+        return -1
