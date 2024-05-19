@@ -1,0 +1,16 @@
+
+class Solution {
+    public static int findClosest(int n, int k, int[] arr) {
+        // code here
+        Set<Integer> ans=new HashSet<>();
+        int r=0;
+        int diff=Integer.MAX_VALUE;
+        for(int i=0;i<n;i++){
+            if(Math.abs(arr[i]-k)<=diff){
+                diff=Math.abs(arr[i]-k);
+                r=Math.max(r,arr[i]);
+            }
+        }
+        return r;
+    }
+}
