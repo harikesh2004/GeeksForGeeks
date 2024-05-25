@@ -1,0 +1,15 @@
+class Solution:
+    #Your task is to complete this function
+    #Function should return an integer
+    #a - list/array containing height of stack's respectively
+    def max_Books(self, n, k, arr):
+        #code here
+        ans=0
+        temp=0
+        for i in range(n):
+            if arr[i] <= k:
+                temp+=arr[i]
+                ans=max(temp,ans)
+            else:
+                temp=0
+        return ans
