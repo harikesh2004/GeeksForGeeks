@@ -1,0 +1,32 @@
+class Solution:
+    def findSwapValues(self,a, n, b, m):
+        # Your code goes here
+        suma,sumb=sum(a),sum(b)
+
+        if (suma+sumb)%2!=0:
+
+            return -1
+
+        a.sort()
+
+        b.sort()
+
+        i,j=0,0
+
+        while i<n and j<m:
+
+            swap1,swap2=suma-a[i]+b[j],sumb-b[j]+a[i]
+
+            if swap1==swap2:
+
+                return 1
+
+            elif swap1>swap2:
+
+                i+=1
+
+            else:
+
+                j+=1
+
+        return -1
