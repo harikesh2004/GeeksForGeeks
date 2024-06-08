@@ -1,0 +1,8 @@
+class Solution:
+    def findExtra(self,n,a,b):
+        #add code here
+        for i in range(n-1):
+            if a[i]!=b[i]:
+                return i
+        return n-1
+            
