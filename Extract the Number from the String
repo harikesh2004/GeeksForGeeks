@@ -1,0 +1,19 @@
+class Solution:
+    def ExtractNumber(self,sentence):
+        #code here
+        numbers=[]
+        curr_num=''
+        for char in sentence:
+            if char.isdigit():
+                curr_num+=char
+            else:
+                if curr_num :
+                    if '9' not in curr_num:
+                        numbers.append(int(curr_num))
+                    curr_num=''
+        if curr_num and '9' not in curr_num:
+            numbers.append(int(curr_num))
+        numbers.sort()
+        if len(numbers)==0:
+            return -1
+        return numbers[-1]
