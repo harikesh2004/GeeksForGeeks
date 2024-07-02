@@ -1,0 +1,17 @@
+#User function Template for python3
+
+'''
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+'''
+def compute(head): 
+    #return True/False
+    form = ""
+    while head:
+        form+= head.data
+        head = head.next
+    
+    return form==form[::-1]
+
