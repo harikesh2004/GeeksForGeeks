@@ -1,0 +1,38 @@
+#User function Template for python3
+
+"""
+# Linked list Node class
+
+    class Node :
+        def __init__(self, val):
+            self.data = val
+            self.next = None
+
+"""
+
+class Solution:
+    def removeAllDuplicates(self, head):
+        #code here
+        if not head:
+            return None
+        current = head
+        count_dict = {}
+        while current:
+            if current.data in count_dict:
+                count_dict[current.data] += 1
+            else:
+                count_dict[current.data] = 1
+            current = current.next
+        dummy = Node(0)  
+        dummy.next = head
+        prev = dummy
+        current = head
+        
+        while current:
+            if count_dict[current.data] > 1:
+                prev.next = current.next 
+            else:
+                prev = current
+            current = current.next
+        
+        return dummy.next
