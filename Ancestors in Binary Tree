@@ -1,0 +1,40 @@
+
+/*class Node of the binary tree
+class Node
+{
+    int data;
+    Node left, right;
+    Node(int key)
+    {
+        data = key;
+        left = right = null;
+    }
+}*/
+class Solution {
+
+    public int find(Node node,ArrayList<Integer> ans,int target){
+        
+        if(node==null) return -1;
+        
+        if(node.data==target){
+            return node.data;
+        }
+        
+        int left=find(node.left,ans,target);
+        int right=find(node.right,ans,target);
+        
+        if(left==target || right==target) {
+            ans.add(node.data);
+            return target;
+        }
+        
+        return -1;
+    } 
+    public ArrayList<Integer> Ancestors(Node root, int target) {
+        
+        ArrayList<Integer> ans=new ArrayList<>();
+        find(root,ans,target);
+        return ans;
+        
+    }
+}
