@@ -1,0 +1,18 @@
+#User function Template for python3
+class Solution:
+    def sortedArrayToBST(self, nums):
+        # code here
+        n = len(nums)
+        def mergeTree(l,r):
+            if l > r:
+                return None
+            m = (l+r)//2
+            # print(m)
+            root = Node(nums[m])
+            root.left=mergeTree(l,m-1)
+            root.right=mergeTree(m+1,r)
+            
+            return root
+        
+        return mergeTree(0,n-1)
+
