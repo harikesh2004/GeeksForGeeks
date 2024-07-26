@@ -1,0 +1,13 @@
+#User function Template for python3
+class Solution:
+    def kPangram(self,string, k):
+    # code here
+        a=string.replace(" ","")
+        c=list(a)
+        b=set(c)
+        if len(c)>=26:
+            if 26-len(b)<=k:
+                return True
+            else:
+                return False
+        return False
