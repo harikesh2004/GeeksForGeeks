@@ -1,0 +1,23 @@
+class Solution:
+	def solve(self,n,m,s1,s2,dp):
+		# Code here
+        if n == 0 : return m
+        if m == 0 : return n
+        if dp[n][m] != -1 : return dp[n][m]
+        
+        
+        if s1[n-1] == s2[m-1]: 
+            dp[n][m] = self.solve(n-1,m-1,s1,s2,dp)
+            return dp[n][m]
+        
+        dp[n][m] = 1+min(self.solve(n-1,m,s1,s2,dp),self.solve(n,m-1,s1,s2,dp),self.solve(n-1,m-1,s1,s2,dp))
+        
+        return dp[n][m]
+    
+    def editDistance(self, str1, str3):
+        
+        n,m = len(str1),len(str3)
+        
+        dp = [[-1]*(m+1) for _ in range(n+1)]
+        
+        return self.solve(n,m,str1,str3,dp)
