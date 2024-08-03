@@ -1,0 +1,8 @@
+class Solution:
+    def celebrity(self, mat):
+        # code here
+        n = len(mat)
+        for i, k in enumerate(mat):
+            if sum(k) == 0 and sum([mat[j][i] for j in range(n)]) == n-1:
+                return i
+        return -1
