@@ -1,0 +1,8 @@
+#User function Template for python3
+class Solution:
+    def isValid(self, str):
+        #code here
+        import re
+        regexp=r'^(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})$'
+        tmp=re.match(regexp,str)
+        return tmp and all([int(x)<=255 for x in tmp.groups()])
