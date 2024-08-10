@@ -1,0 +1,32 @@
+# Your task is to complete this function
+
+'''
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+'''
+
+
+class Solution:
+    
+    #Function to rotate a linked list.
+    def rotate(self, head, k):
+        # code here
+        cur=head
+        while k>1:
+            cur=cur.next
+            k-=1
+        if cur.next:
+            new_head=cur.next
+        else:
+            return head
+        cur.next=None
+        cur=new_head
+        while cur.next!=None:
+            cur=cur.next
+        cur.next=head
+        return new_head
+
