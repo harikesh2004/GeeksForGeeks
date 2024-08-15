@@ -1,0 +1,43 @@
+#User function Template for python3
+
+'''
+
+class Node:
+    def __init__(self, data):   # data -> value stored in node
+        self.data = data
+        self.next = None
+'''
+
+class Solution:
+    def reverseLL(self,head):
+        
+        prev,curr = None,head
+        
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+            
+        return prev
+    
+    def addOne(self,head):
+        
+        head = self.reverseLL(head)
+        curr,carry = head,1
+        
+        while curr:
+            
+            sm = carry + curr.data
+            curr.data = sm % 10
+            carry = sm // 10
+            
+            if not curr.next and carry > 0:
+                
+                curr.next = Node(carry)
+                carry = 0
+                
+            curr = curr.next
+            
+        head = self.reverseLL(head)
+        return head
