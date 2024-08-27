@@ -1,0 +1,11 @@
+#User function Template for python3
+ 
+class Solution:
+   
+    #Function to sort the array according to frequency of elements.
+    def sortByFreq(self, arr):
+        from collections import Counter
+        output = []
+        for freq, a in sorted((-freq, a) for a, freq in Counter(arr).items()):
+            output.extend([a] * -freq)
+        return output
