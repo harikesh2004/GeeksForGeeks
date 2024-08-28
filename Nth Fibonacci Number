@@ -1,0 +1,8 @@
+
+class Solution:
+    def nthFibonacci(self, n : int) -> int:
+        # code here
+        res = [0, 1]
+        for i in range(n):
+            res.append((res[-1]+res[-2])%1000000007)
+        return res[n]
