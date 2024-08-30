@@ -1,0 +1,14 @@
+#User function Template for python3
+
+
+class Solution:
+    def evenlyDivides (self, N):
+        # code here
+        c = 0
+        n = N
+        while N> 0:
+            l = N % 10
+            N = N // 10
+            if l != 0 and n % l == 0:
+                c += 1
+        return c
