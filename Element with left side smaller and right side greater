@@ -1,0 +1,10 @@
+#User function Template for python3
+
+class Solution:
+    def findElement(self, arr):
+        # code here
+        for i in range(1,len(arr)-1):
+            if max(arr[:i+1]) == arr[i] and min(arr[i:]) == arr[i]:
+                return arr[i]
+        return -1
+
